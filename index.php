@@ -1,22 +1,18 @@
 <?php
-// Veritabanı bağlantı bilgileri
-$host = 'aws-0-eu-central-1.pooler.supabase.com';
-$dbname = 'postgres';
-$user = 'postgres.kukdmrswdjzdxxqktzli';
-$pass = '*5vMCmnt6bCaz8p';
-$port = 6543;
+$servername = "sql308.infinityfree.com";
+$username = "if0_36972160";
+$password = "86VWqIT2HtB";
 
 try {
-    // PDO ile PostgreSQL veritabanına bağlanma
-    $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
-    $pdo = new PDO($dsn, $user, $pass);
-
-    // Hata modunu ayarla
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    echo "Veritabanına başarıyla bağlanıldı!";
-} catch (PDOException $e) {
-    // Hata mesajını göster
-    echo "Bağlantı hatası: " . $e->getMessage();
+  $conn = new PDO("mysql:host=$servername;dbname=if0_36972160_mirejder", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo "Connected successfully";
+} catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
 }
+
+ $sorgu = $baglanti->query("INSERT INTO data(username, mail, password, newpassword) VALUES(əmirejder, mirejder@gmai.com , 12341234, 12341234)");
+
+
 ?>
